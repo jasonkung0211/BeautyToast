@@ -31,12 +31,15 @@ public class MyDynamicToast {
     private static TextView tv_msg;
     private static LinearLayout parent_layout;
 
-    public static final int LENGTH_SHORT = 0;
-    public static final int LENGTH_LONG = 1;
+    public static final int LENGTH_SHORT = Toast.LENGTH_SHORT;
+    public static final int LENGTH_LONG = Toast.LENGTH_LONG;
+    public static final int LENGTH_DEFAULT = LENGTH_SHORT;
     public static final String POSITION_LEFT = "left";
     public static final String POSITION_RIGHT = "right";
     public static final String POSITION_TOP = "top";
     public static final String POSITION_BOTTOM = "bottom";
+
+
 
     private static void init(Context context) {
 
@@ -52,6 +55,10 @@ public class MyDynamicToast {
     }
 
     public static void errorMessage(Context context, String errorMsg) {
+        errorMessage(context, errorMsg, LENGTH_DEFAULT);
+    }
+
+    public static void errorMessage(Context context, String errorMsg, int showtime) {
 
         init(context);
 
@@ -70,12 +77,16 @@ public class MyDynamicToast {
 
         toast = new Toast(context);
         toast.setView(toastRoot);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(showtime);
         toast.show();
 
     }
 
     public static void warningMessage(Context context, String warningMsg) {
+        warningMessage(context, warningMsg, LENGTH_DEFAULT);
+    }
+
+    public static void warningMessage(Context context, String warningMsg, int showtime) {
 
         init(context);
 
@@ -93,12 +104,16 @@ public class MyDynamicToast {
 
         toast = new Toast(context);
         toast.setView(toastRoot);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(showtime);
         toast.show();
 
     }
 
-    public static void successMessage(Context context, String warningMsg) {
+    public static void successMessage(Context context, String successMsg) {
+        successMessage(context, successMsg, LENGTH_DEFAULT);
+    }
+
+    public static void successMessage(Context context, String successMsg, int showtime) {
 
         init(context);
 
@@ -108,7 +123,7 @@ public class MyDynamicToast {
         iv_bottom_icon.setVisibility(View.GONE);
 
         iv_left_icon.setImageResource(R.drawable.ic_success);
-        tv_msg.setText(warningMsg);
+        tv_msg.setText(successMsg);
         tv_msg.setTextColor(Color.WHITE);
         tv_msg.setTextSize(16);
 
@@ -116,12 +131,16 @@ public class MyDynamicToast {
 
         toast = new Toast(context);
         toast.setView(toastRoot);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(showtime);
         toast.show();
 
     }
 
-    public static void informationMessage(Context context, String warningMsg) {
+    public static void informationMessage(Context context, String informationMsg) {
+        informationMessage(context, informationMsg, LENGTH_DEFAULT);
+    }
+
+    public static void informationMessage(Context context, String informationMsg, int showtime) {
 
         init(context);
 
@@ -131,7 +150,7 @@ public class MyDynamicToast {
         iv_bottom_icon.setVisibility(View.GONE);
 
         iv_left_icon.setImageResource(R.drawable.ic_info);
-        tv_msg.setText(warningMsg);
+        tv_msg.setText(informationMsg);
         tv_msg.setTextColor(Color.WHITE);
         tv_msg.setTextSize(16);
 
@@ -139,7 +158,7 @@ public class MyDynamicToast {
 
         toast = new Toast(context);
         toast.setView(toastRoot);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(showtime);
         toast.show();
 
     }
