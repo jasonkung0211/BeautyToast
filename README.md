@@ -25,7 +25,7 @@ allprojects {
 - Add this to your app build.gradle:
 ~~~
 dependencies {
-  compile 'com.github.vatsaldesai92:MyDynamicToastLibrary:1.0.1'
+  compile 'com.github.jasonkung0211:BeautyToast:1.0.2'
 }
 ~~~
 
