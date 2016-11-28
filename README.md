@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/jasonkung0211/BeautyToast.svg)](https://jitpack.io/#jasonkung0211/BeautyToast)
+
 # MyDynamicToastLibrary
 This is an Android Library for developer to use Android Toast and Customized Toast easily.
 
